@@ -41,7 +41,7 @@ public class StartOptions : MonoBehaviour {
 
 
 	public void StartButtonClicked()
-	{
+	{		
 		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic
 		//To change fade time, change length of animation "FadeToColor"
 		if (menuSettingsData.musicLoopToChangeTo != null) 
@@ -96,6 +96,7 @@ public class StartOptions : MonoBehaviour {
 
 		//Hide the main menu UI element
 		showPanels.HideMenu ();
+		//showPanels.
 
 		//Load the selected scene, by scene index number in build settings
 		SceneManager.LoadScene (sceneToStart);
@@ -111,6 +112,8 @@ public class StartOptions : MonoBehaviour {
 	{
 		//Pause button now works if escape is pressed since we are no longer in Main menu.
 		inMainMenu = false;
+		GameManager.instance.StartGame();
+
 
 		//If there is a second music clip in MenuSettings, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic 
 		if (menuSettingsData.musicLoopToChangeTo != null) 
