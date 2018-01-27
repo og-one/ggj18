@@ -120,6 +120,8 @@ public class StartOptions : MonoBehaviour {
 		}
         
         StartCoroutine(FadeCanvasGroupAlpha(1f,0f, menuCanvasGroup));
+
+		showPanels.ShowPausePanel();
 	}
 
     public IEnumerator FadeCanvasGroupAlpha(float startAlpha, float endAlpha, CanvasGroup canvasGroupToFadeAlpha)
