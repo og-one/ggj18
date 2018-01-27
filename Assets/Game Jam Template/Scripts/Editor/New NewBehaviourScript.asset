@@ -11,7 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: New NewBehaviourScript
   m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
-  Eye_Right: []
+  Eye_Right:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   Eye_Left: []
   EyeBrow_Right_1: []
   EyeBrow_Right_2: []
