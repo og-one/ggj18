@@ -29,7 +29,7 @@ public class facecontroller : MonoBehaviour {
 	void OnMouseDrag()
 	{
 		if(IsDragable)    // Only do if IsDraggable == true
-		{
+		{	
 
 			Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z); // hardcode the y and z for your use
 
