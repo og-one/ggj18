@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class facecontroller : MonoBehaviour {
-
+	private Vector3 origin;
 	private Vector3 screenPoint;
 	private Vector3 offset;
 	public bool IsDragable = true;
 
+//	void SetTransformX(float n){
+//		transform.position = new Vector3(n, transform.position.y, transform.position.z);
+//	}
+	void Start(){
+		origin = transform.position;
+	}
+		
 	void OnMouseDown()
 	{
-		if(IsDragable)    // Only do if IsDraggable == true
+		if(IsDragable)   // Only do if IsDraggable == true
 		{
 			screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
@@ -27,8 +34,11 @@ public class facecontroller : MonoBehaviour {
 
 			Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 
-			transform.position = curPosition;
+			if (Vector3.Distance (origin, curPosition) < 1) {
 
+				transform.position = curPosition;
+	
+			}
 		}
 	}
 
