@@ -6,6 +6,7 @@ public class facecontroller : MonoBehaviour {
 	private Vector3 origin;
 	private Vector3 screenPoint;
 	private Vector3 offset;
+	public float dis;
 	public bool IsDragable = true;
 
 //	void SetTransformX(float n){
@@ -34,8 +35,8 @@ public class facecontroller : MonoBehaviour {
 
 			Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 
-			if (Vector3.Distance (origin, curPosition) < 1) {
-
+			if (Vector3.Distance (origin, curPosition) < dis) {
+						
 				transform.position = curPosition;
 	
 			}
