@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &26054372
 MeshRenderer:
@@ -259,7 +260,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -316,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &176034432
 GameObject:
@@ -731,6 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &305922101
 MeshRenderer:
@@ -833,6 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &343988327
 MeshRenderer:
@@ -940,6 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &424014489
 MeshRenderer:
@@ -1042,6 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &444504113
 MeshRenderer:
@@ -1149,6 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &585588719
 MeshRenderer:
@@ -1331,7 +1338,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1388,6 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &824527497 stripped
 GameObject:
@@ -1584,6 +1592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &1149936716
 MeshRenderer:
@@ -1690,7 +1699,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1747,6 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1207951144
 GameObject:
@@ -1792,7 +1802,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1849,6 +1859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1212310617
 GameObject:
@@ -2020,7 +2031,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2077,6 +2088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1299953299 stripped
 GameObject:
@@ -2127,7 +2139,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2184,6 +2196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1322179687
 GameObject:
@@ -2229,7 +2242,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2286,6 +2299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1373186260 stripped
 GameObject:
@@ -2337,6 +2351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &1389316987
 MeshRenderer:
@@ -2439,6 +2454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &1457198919
 MeshRenderer:
@@ -2540,7 +2556,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2597,6 +2613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1530522504
 GameObject:
@@ -2705,6 +2722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &1544198174
 MeshRenderer:
@@ -2806,7 +2824,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2863,6 +2881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1616731461
 GameObject:
@@ -2908,7 +2927,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2965,6 +2984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1739246142
 GameObject:
@@ -3195,6 +3215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &1949728689
 GameObject:
@@ -3240,7 +3261,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3297,6 +3318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 5
   IsDragable: 1
 --- !u!1 &2016308863
 GameObject:
@@ -3343,6 +3365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &2016308866
 MeshRenderer:
@@ -3655,6 +3678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae39ebf62a7b4f728832cd054b8ee39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dis: 0
   IsDragable: 1
 --- !u!23 &2031593110
 MeshRenderer:
