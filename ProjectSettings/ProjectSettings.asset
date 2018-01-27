@@ -634,9 +634,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 27ff1aa2-e75b-4fd5-8d5d-d65b0694e963
+  cloudProjectId: 3828b6d4-5309-478c-836c-0dc5c0a1c6f6
   projectName: ggj18
-  organizationId: aaron-santiago-9ecdb44d-8080-49ed-b2aa-66b91a326248
+  organizationId: bixingxie
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

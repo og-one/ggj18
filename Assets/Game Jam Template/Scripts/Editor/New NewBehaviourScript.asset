@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: New NewBehaviourScript
+  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
+  Eye_Right: []
+  Eye_Left: []
+  EyeBrow_Right_1: []
+  EyeBrow_Right_2: []
+  EyeBrow_Right_3: []
+  EyeBrow_Left_1: []
+  EyeBrow_Left_2: []
+  EyeBrow_Left_3: []
+  Mouth_1: []
+  Mouth_2: []
+  Mouth_3: []
+  Mouth_4: []
+  Mouth_5: []
+  Mouth_6: []
