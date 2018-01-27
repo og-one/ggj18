@@ -12,6 +12,7 @@ public class FaceManager : MonoBehaviour {
 	public List<Vector3> CurrentParadigm = new List<Vector3> ();
 
 	public NewBehaviourScript paradigm; 
+	public float score;
 
 //	public List<Vector3> Eye_Right; 
 //	public List<Vector3> Eye_Left; 
@@ -41,12 +42,6 @@ public class FaceManager : MonoBehaviour {
 		}
 
 
-		Transform[] playerTransforms = playerPos.GetComponentsInChildren<Transform> ();
-		//Check at the end 
-		for (int i = 0; i < CurrentParadigm.Count; i++)
-		{
-			Vector3.Distance (playerTransforms [i].position, CurrentParadigm[i]);
-		}
 			
 
 
@@ -60,12 +55,37 @@ public class FaceManager : MonoBehaviour {
 	}
 
 
+	public GameObject[] happy;
+	public GameObject[] upset;
+	public GameObject[] randomPersonsFace;
+	public float test;
+	void OthersFace()
+	{
+		for(int i = 0; i < happy.Length; i++)
+		{
+			randomPersonsFace[i].transform.position = Vector3.Lerp(happy[i].transform.position,upset[i].transform.position,score / 20f);
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
+		
+		//scoring
+		Transform[] playerTransforms = playerPos.GetComponentsInChildren<Transform> ();
+		//Check at the end 
+		score = 0;
+		for (int i = 0; i < CurrentParadigm.Count; i++)
+		{
+			score += Vector3.Distance (playerTransforms [i].position, CurrentParadigm[i]);
+		}
+		
+		
+		OthersFace();
 
+		
 		if(Input.GetMouseButton(0))
 		{
-			Debug.Log ("Testing Update");	
+			//Debug.Log ("Testing Update");	
 //			Physics.Raycast;
 		}
 
