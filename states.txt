@@ -1,0 +1,9 @@
+
+All (Mute)
+
+Title Screen (Begin)
+Level (Reset, Quit)
+Next Level (Next Level, Quit)
+Preview Next Level (Next Level, Quit)
+Quit Screen 
+Title Screen
