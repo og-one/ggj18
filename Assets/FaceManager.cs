@@ -65,7 +65,7 @@ public class FaceManager : MonoBehaviour {
 
 		if(Input.GetMouseButton(0))
 		{
-			Debug.Log ("Testing Update");	
+//			Debug.Log ("Testing Update");	
 //			Physics.Raycast;
 		}
 
