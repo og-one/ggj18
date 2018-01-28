@@ -9,7 +9,7 @@ public class savedposition : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //index = 0,1,2
-        if (index <= playerpositions.list_of_positions.Count)
+        if (index < playerpositions.list_of_positions.Count)
         {
             positions = playerpositions.list_of_positions[index];
             int x = 0;
