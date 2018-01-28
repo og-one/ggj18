@@ -15,6 +15,9 @@ public class FaceManager : MonoBehaviour {
 	public GameObject dogFaceGraphics;
 
 	public List<GameObject> FaceParadigm = new List<GameObject>();
+	public List<GameObject> FaceBackground = new List<GameObject> ();
+	private GameObject currentFaceBackground;
+	public GameObject faceBackgroundHolder;
 
 	public List<Vector3> CurrentParadigm = new List<Vector3> ();
 
@@ -63,7 +66,12 @@ public class FaceManager : MonoBehaviour {
 		if (level > 0) {
 			FaceParadigm [level - 1].SetActive(false);
 		}
-
+		currentFaceBackground.SetActive (false);
+		currentFaceBackground = Instantiate (FaceBackground [testLevel]);
+		currentFaceBackground.transform.parent = faceBackgroundHolder.transform;
+		currentFaceBackground.transform.localPosition = new Vector3 (0, 0, 0);
+		currentFaceBackground.transform.localEulerAngles = new Vector3 (0, 0, 0);
+		currentFaceBackground.transform.localScale = new Vector3 (1, 1, 1);
 	}
 
 	// Use this for initialization
@@ -89,6 +97,12 @@ public class FaceManager : MonoBehaviour {
 			finalScore += Vector3.Distance (playerTransforms[i].transform.localPosition, CurrentParadigm[i]);
 		}
 		testLevel = 0;
+
+		currentFaceBackground = Instantiate (FaceBackground [testLevel]);
+		currentFaceBackground.transform.parent = faceBackgroundHolder.transform;
+		currentFaceBackground.transform.localPosition = new Vector3 (0, 0, 0);
+		currentFaceBackground.transform.localEulerAngles = new Vector3 (0, 0, 0);
+		currentFaceBackground.transform.localScale = new Vector3 (1, 1, 1);
 	}
 		
 

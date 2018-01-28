@@ -8,7 +8,7 @@ public class facecontroller : MonoBehaviour {
 	private SpriteRenderer sr;
 	public float myScale;
 
-	private Vector3 origin;
+	public Vector3 origin;
 	private Vector3 screenPoint;
 	private Vector3 offset;
 	public float dis;
