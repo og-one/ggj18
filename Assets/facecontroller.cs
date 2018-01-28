@@ -27,7 +27,7 @@ public class facecontroller : MonoBehaviour {
 		Color curColor = rend.material.color;
 		curColor.a = 0f;
 		rend.material.color = curColor;
-	
+		// dis  = 1;
 	}
 
 
@@ -81,9 +81,14 @@ public class facecontroller : MonoBehaviour {
 			Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z); 
 			Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 
-			if (Vector3.Distance (origin, curPosition) < dis) {
+
+
+			if (Vector3.Distance(origin, curPosition) > dis) {
+				Vector3 diff = curPosition - origin;
+				diff = diff.normalized * dis;
+				transform.position = origin + diff;
+			} else {
 				transform.position = curPosition;
-	
 			}
 		}
 	}
