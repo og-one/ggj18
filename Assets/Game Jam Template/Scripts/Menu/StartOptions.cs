@@ -21,14 +21,14 @@ public class StartOptions : MonoBehaviour {
 
 	private PlayMusic playMusic;										//Reference to PlayMusic script
 	private float fastFadeIn = .01f;									//Very short fade time (10 milliseconds) to start playing music immediately without a click/glitch
-	private ShowPanels showPanels;										//Reference to ShowPanels script on UI GameObject, to show and hide panels
+	//public ShowPanels.instance;										//Reference to ShowPanels script on UI GameObject, to show and hide panels
     private CanvasGroup menuCanvasGroup;
 
 
     void Awake()
 	{
 		//Get a reference to ShowPanels attached to UI object
-		showPanels = GetComponent<ShowPanels> ();
+		ShowPanels.instance = GetComponent<ShowPanels> ();
 
 		//Get a reference to PlayMusic attached to UI object
 		playMusic = GetComponent<PlayMusic> ();
@@ -95,7 +95,7 @@ public class StartOptions : MonoBehaviour {
 		inMainMenu = false;
 
 		//Hide the main menu UI element
-		showPanels.HideMenu ();
+		ShowPanels.instance.HideMenu ();
 		//showPanels.
 
 		//Load the selected scene, by scene index number in build settings
@@ -105,7 +105,7 @@ public class StartOptions : MonoBehaviour {
 	public void HideDelayed()
 	{
 		//Hide the main menu UI element after fading out menu for start game in scene
-		showPanels.HideMenu();
+		ShowPanels.instance.HideMenu();
 	}
 
 	public void StartGameInScene()
@@ -123,8 +123,6 @@ public class StartOptions : MonoBehaviour {
 		}
         
         StartCoroutine(FadeCanvasGroupAlpha(1f,0f, menuCanvasGroup));
-
-		showPanels.ShowPausePanel();
 	}
 
     public IEnumerator FadeCanvasGroupAlpha(float startAlpha, float endAlpha, CanvasGroup canvasGroupToFadeAlpha)
