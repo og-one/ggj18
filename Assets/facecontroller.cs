@@ -58,7 +58,6 @@ public class facecontroller : MonoBehaviour {
 	}
 	void Update(){
 
-
 		if (disappear) {
 		
 			Color curColor = rend.material.color;
