@@ -25,6 +25,8 @@ public class FaceManager : MonoBehaviour {
 	public float score;
 	public float finalScore;
 
+    public static List<float> Scores = new List<float>();
+
 	public bool testNextLevel;
 	public int testLevel;
 
@@ -46,6 +48,7 @@ public class FaceManager : MonoBehaviour {
 
 	public void LoadLevel(int level)
 	{
+        Scores.Add(score / finalScore);
         foreach(GameObject x in randomPersonsFace){
             npc_positions.Add(x.transform.position);
         }
