@@ -81,14 +81,7 @@ public class FaceManager : MonoBehaviour {
 			finalScore += Vector3.Distance (playerTransforms[i].transform.localPosition, CurrentParadigm[i]);
 		}
 	}
-
-	// This function is to compare the coordinates of the players with the paradigm 
-	void Compare(){
-//		PlayerCoordinates = GameObject.FindGameObjectsWithTag ("Player");
-//		foreach (GameObject p in PlayerCoordinates)
-//			p.transform.position()
-	}
-
+		
 
 	public GameObject[] happy;
 	public GameObject[] upset;
