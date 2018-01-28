@@ -2316,6 +2316,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1212310618}
+  - component: {fileID: 1212310619}
   m_Layer: 0
   m_Name: PlayersPersonFace (1)
   m_TagString: Untagged
@@ -2361,6 +2362,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1212310619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1212310617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05dc3d79b14447f3b62c5371001f36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Eye_Right: {fileID: 1207951144}
+  Eye_Left: {fileID: 1304564896}
+  EyeBrow_Right_1: {fileID: 1616731461}
+  EyeBrow_Right_2: {fileID: 1180415765}
+  EyeBrow_Right_3: {fileID: 1481152717}
+  EyeBrow_Left_1: {fileID: 155380216}
+  EyeBrow_Left_2: {fileID: 1268252999}
+  EyeBrow_Left_3: {fileID: 1322179687}
+  Mouth_2: {fileID: 1544798566}
+  Mouth_3: {fileID: 1949728689}
+  Mouth_4: {fileID: 797816501}
+  Mouth_5: {fileID: 1891894904}
 --- !u!1 &1216865575
 GameObject:
   m_ObjectHideFlags: 0
