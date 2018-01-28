@@ -19,7 +19,7 @@ public class playerpositions : MonoBehaviour {
 	public GameObject Mouth_5; 
 	// Use this for initialization
 	void Start () {
-
+       
 	}
 	
 	// Update is called once per frame
