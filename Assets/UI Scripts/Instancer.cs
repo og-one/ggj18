@@ -17,6 +17,7 @@ public class Instancer : MonoBehaviour {
 			inst.transform.parent = transform;
 			inst.transform.localPosition = offset * i;
 			inst.transform.localEulerAngles = rotation * i;
+			inst.transform.localScale = new Vector3 (1, 1, 1);
 		}
 	}
 	

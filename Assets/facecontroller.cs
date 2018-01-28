@@ -17,6 +17,8 @@ public class facecontroller : MonoBehaviour {
 	private bool disappear=false;
 
 
+	public static bool controllable = false;
+
 
 	void Start(){
 		origin = transform.position;
@@ -75,7 +77,7 @@ public class facecontroller : MonoBehaviour {
 
 	void OnMouseDrag()
 	{
-		if(IsDragable)    
+		if(IsDragable && controllable)    
 		{	
 			sr.enabled = true;
 			Color tmp = sr.color;

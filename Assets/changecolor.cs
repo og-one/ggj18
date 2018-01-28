@@ -11,8 +11,8 @@ public class changecolor : MonoBehaviour
     public GameObject green2;
     public static int randint = 0;
 	private List<Color> colors = new List<Color>{
-		Color.green, new Color(236/255f,199/255f,110/255f,1f),new Color(197/255f,227/255f,223/255f,1f),new Color(255/255f,255/255f,179/255f,1f),Color.white,
-		Color.blue,new Color(78/255f,140/255f,168/255f,1f),new Color(184/255f,175/255f,202/255f,1f),new Color(145/255f,173/255f,112/255f,1f), Color.black,
+		new Color(144/255f,180/255f,197/255f,1f), new Color(236/255f,199/255f,110/255f,1f),new Color(197/255f,227/255f,223/255f,1f),new Color(255/255f,255/255f,179/255f,1f),Color.white,
+		new Color(185/255f,209/255f,164/255f,1f),new Color(78/255f,140/255f,168/255f,1f),new Color(184/255f,175/255f,202/255f,1f),new Color(145/255f,173/255f,112/255f,1f), Color.black,
     };
 	// Use this for initialization
 	void Start () {
