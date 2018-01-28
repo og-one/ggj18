@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 	public static GameManager instance;
 	public Text uiTimer;
 	public Button uiButton;
+	public GameObject scoreboard;
 
 	float timer;
 	int level;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
 		level = 0;
 		uiButton.gameObject.SetActive(false);
+		scoreboard.SetActive(false);
 	}
 
 	public void StartGame() {
@@ -30,19 +32,24 @@ public class GameManager : MonoBehaviour
 
 	public void NextScene() {
 		Debug.Log("NextScene");
-		if (level < 3) {
+		if (level < 4) {
 			level += 1;
 			timer = 60f;
 			uiButton.gameObject.SetActive (false);
+			scoreboard.SetActive (false);
+		} else if (level == 4) {
+			uiButton.gameObject.SetActive(false);
+			scoreboard.SetActive(true);
 		} else {
-			EndScene();
+			
 		}
 	}
 
 	public void Update() {
-		if (level > 0 && level < 4) {
-			if (timer == 021) {
-				uiButton.gameObject.SetActive (true);
+		Debug.Log("Update");
+		if (level < 4) {
+			if (level > 0 && timer == 0) {
+				uiButton.gameObject.SetActive(true);
 			} else {
 				timer = Mathf.Clamp (timer - Time.deltaTime, 0.0f, 2.0f);
 				uiTimer.text = "Level " + level.ToString() + ": " + timer.ToString("F2") + " sec";
@@ -50,7 +57,6 @@ public class GameManager : MonoBehaviour
 		} else {
 			EndScene();
 		}
-
 	}
 
 	public void EndScene() {
@@ -58,7 +64,7 @@ public class GameManager : MonoBehaviour
 		// fill up progress bars based on score
 		// main menu button, quit button
 		Debug.Log("End scene");
-		//ShowPanels.instance.ShowMenu();
+		scoreboard.gameObject.SetActive(true); 
 	}
 
 
