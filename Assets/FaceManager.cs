@@ -38,16 +38,16 @@ public class FaceManager : MonoBehaviour {
 
 		//AAfter every time we change level 
 		CurrentParadigm.Clear ();
-		foreach (Transform t in FaceParadigm [0].GetComponentsInChildren<Transform> ()) {
-			CurrentParadigm.Add (t.position);
+		foreach (Collider c in FaceParadigm [0].GetComponentsInChildren<Collider> ()) {
+			CurrentParadigm.Add (c.transform.position);
 		}
 
-		//scoring
-		Transform[] playerTransforms = playerPos.GetComponentsInChildren<Transform> ();
+		//Set up final score 
+		Collider[] playerTransforms = playerPos.GetComponentsInChildren<Collider> ();
 		finalScore = 0;
 		for (int i = 0; i < CurrentParadigm.Count; i++)
 		{
-			finalScore += Vector3.Distance (playerTransforms [i].position, CurrentParadigm[i]);
+			finalScore += Vector3.Distance (playerTransforms[i].transform.position, CurrentParadigm[i]);
 		}
 	}
 
@@ -75,14 +75,13 @@ public class FaceManager : MonoBehaviour {
 	void Update () {
 		
 		//scoring
-		Transform[] playerTransforms = playerPos.GetComponentsInChildren<Transform> ();
+		Collider[] playerTransforms = playerPos.GetComponentsInChildren<Collider> ();
 		//Check at the end 
 		score = 0;
 		for (int i = 0; i < CurrentParadigm.Count; i++)
 		{
-			score += Vector3.Distance (playerTransforms [i].position, CurrentParadigm[i]);
+			score += Vector3.Distance (playerTransforms[i].transform.position, CurrentParadigm[i]);
 		}
-		
 		
 		OthersFace();
 //		if(Input.a)
