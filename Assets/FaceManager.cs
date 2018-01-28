@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FaceManager : MonoBehaviour {
 
+    public static List<Vector3> npc_positions = new List<Vector3>();
+    public static List<List<Vector3>> npc_list_of_positions = new List<List<Vector3>>();//0,1,2
 
 	public GameObject playerPos;
 
@@ -41,6 +43,10 @@ public class FaceManager : MonoBehaviour {
 
 	public void LoadLevel(int level)
 	{
+        foreach(GameObject x in randomPersonsFace){
+            npc_positions.Add(x.transform.position);
+        }
+        npc_list_of_positions.Add(npc_positions);
 		// load the graphics
 		//if(level == 1)
 		facecontroller[] playerTransforms = playerPos.GetComponentsInChildren<facecontroller> ();
@@ -84,14 +90,7 @@ public class FaceManager : MonoBehaviour {
 		}
 		testLevel = 0;
 	}
-
-	// This function is to compare the coordinates of the players with the paradigm 
-	void Compare(){
-//		PlayerCoordinates = GameObject.FindGameObjectsWithTag ("Player");
-//		foreach (GameObject p in PlayerCoordinates)
-//			p.transform.position()
-	}
-
+		
 
 	public GameObject[] happy;
 	public GameObject[] upset;
