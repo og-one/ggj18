@@ -9,24 +9,18 @@ public class changecolor : MonoBehaviour
     public GameObject blue2;
     public GameObject green;
     public GameObject green2;
-    int randint = 1;
-    public static bool change = true;
-    private List<Color> colors = new List<Color>{
-        Color.yellow,Color.red, Color.blue,Color.green,Color.grey,Color.white,
-        Color.red,Color.black, Color.green,Color.blue,Color.blue,Color.black,
+    public static int randint = 0;
+	private List<Color> colors = new List<Color>{
+		Color.green, new Color(236/255f,199/255f,110/255f,1f),new Color(197/255f,227/255f,223/255f,1f),new Color(255/255f,255/255f,179/255f,1f),Color.white,
+		Color.blue,new Color(78/255f,140/255f,168/255f,1f),new Color(184/255f,175/255f,202/255f,1f),new Color(145/255f,173/255f,112/255f,1f), Color.black,
     };
 	// Use this for initialization
 	void Start () {
-        if (change )
-        {
-            randint = Random.Range(0,5);
-            change = false;
-        }
 
         blue.GetComponent<Renderer>().material.SetColor("_Color", colors[randint]);
         blue2.GetComponent<Renderer>().material.SetColor("_Color", colors[randint]);
-        green.GetComponent<Renderer>().material.SetColor("_Color", colors[randint+6]);
-        green2.GetComponent<Renderer>().material.SetColor("_Color", colors[randint+6]);
+        green.GetComponent<Renderer>().material.SetColor("_Color", colors[randint+5]);
+        green2.GetComponent<Renderer>().material.SetColor("_Color", colors[randint+5]);
 
 
       }
