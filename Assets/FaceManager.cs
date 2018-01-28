@@ -49,11 +49,19 @@ public class FaceManager : MonoBehaviour {
         npc_list_of_positions.Add(npc_positions);
 		// load the graphics
 		//if(level == 1)
+		facecontroller[] playerTransforms = playerPos.GetComponentsInChildren<facecontroller> ();
+		for (int i = 0; i < playerTransforms.Length; i++)
+		{
+			playerTransforms [i].transform.position = playerTransforms [i].origin;
+		}
 
 		// Change the face paradigm that you compare to
 		CurrentParadigm.Clear ();
 		foreach (Collider c in FaceParadigm [level].GetComponentsInChildren<Collider> ()) {
 			CurrentParadigm.Add (c.transform.localPosition);
+		}
+		if (level > 0) {
+			FaceParadigm [level - 1].SetActive(false);
 		}
 
 	}
@@ -80,6 +88,7 @@ public class FaceManager : MonoBehaviour {
 		{
 			finalScore += Vector3.Distance (playerTransforms[i].transform.localPosition, CurrentParadigm[i]);
 		}
+		testLevel = 0;
 	}
 		
 
@@ -109,12 +118,16 @@ public class FaceManager : MonoBehaviour {
 
 		if(testNextLevel)
 		{
-			LoadLevel(testLevel);
-			testLevel++;
+			loadNextLevel ();
 			testNextLevel = false;
 		}
 		
 		OthersFace();
 //		if(Input.a)
+	}
+
+	public void loadNextLevel() {
+		testLevel++;
+		LoadLevel (testLevel);
 	}
 }
