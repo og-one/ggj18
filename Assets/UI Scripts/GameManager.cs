@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 {
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
 	public Text uiTimer;
 	public Button uiButton;
 	public GameObject scoreboard;
+	public FaceManager faceManager;
+
+
 
 	float timer;
 	int level;
@@ -22,6 +26,11 @@ public class GameManager : MonoBehaviour
 		level = 0;
 		uiButton.gameObject.SetActive(false);
 		scoreboard.SetActive(false);
+	}
+
+	public void RestartScene() {
+		int scene = SceneManager.GetActiveScene().buildIndex;
+		SceneManager.LoadScene(scene, LoadSceneMode.Single);
 	}
 
 	public void StartGame() {
@@ -37,6 +46,7 @@ public class GameManager : MonoBehaviour
 			timer = 60f;
 			uiButton.gameObject.SetActive (false);
 			scoreboard.SetActive (false);
+			faceManager.loadNextLevel ();
 		} else if (level == 4) {
 			uiButton.gameObject.SetActive(false);
 			scoreboard.SetActive(true);

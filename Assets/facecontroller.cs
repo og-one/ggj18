@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class facecontroller : MonoBehaviour {
-	private Vector3 origin;
+	public Vector3 origin;
 	private Vector3 screenPoint;
 	private Vector3 offset;
 	public float dis;
