@@ -7,6 +7,11 @@ public class FaceManager : MonoBehaviour {
 
 	public GameObject playerPos;
 
+	public GameObject humanFaceGraphics;
+	public GameObject elfFaceGraphics;
+	public GameObject babyFaceGraphics;
+	public GameObject dogFaceGraphics;
+
 	public List<GameObject> FaceParadigm = new List<GameObject>();
 
 	public List<Vector3> CurrentParadigm = new List<Vector3> ();
@@ -14,6 +19,9 @@ public class FaceManager : MonoBehaviour {
 	public NewBehaviourScript paradigm; 
 	public float score;
 	public float finalScore;
+
+	public bool testNextLevel;
+	public int testLevel;
 
 //	public List<Vector3> Eye_Right; 
 //	public List<Vector3> Eye_Left; 
@@ -31,15 +39,32 @@ public class FaceManager : MonoBehaviour {
 //	public List<Vector3> Mouth_6; 
 
 
+	public void LoadLevel(int level)
+	{
+		// load the graphics
+		//if(level == 1)
+
+		// Change the face paradigm that you compare to
+		CurrentParadigm.Clear ();
+		foreach (Collider c in FaceParadigm [level].GetComponentsInChildren<Collider> ()) {
+			CurrentParadigm.Add (c.transform.localPosition);
+		}
+
+	}
+
 	// Use this for initialization
 	void Start () {
 
 		paradigm = (NewBehaviourScript)ScriptableObject.CreateInstance (typeof(NewBehaviourScript)); 
 
+		//Instatiate face graphics
+		//GameObject go =  Instatiate( humanFaceGraphics) as GameObject;
+		//playerPos
+
 		//AAfter every time we change level 
 		CurrentParadigm.Clear ();
 		foreach (Collider c in FaceParadigm [0].GetComponentsInChildren<Collider> ()) {
-			CurrentParadigm.Add (c.transform.position);
+			CurrentParadigm.Add (c.transform.localPosition);
 		}
 
 		//Set up final score 
@@ -47,7 +72,7 @@ public class FaceManager : MonoBehaviour {
 		finalScore = 0;
 		for (int i = 0; i < CurrentParadigm.Count; i++)
 		{
-			finalScore += Vector3.Distance (playerTransforms[i].transform.position, CurrentParadigm[i]);
+			finalScore += Vector3.Distance (playerTransforms[i].transform.localPosition, CurrentParadigm[i]);
 		}
 	}
 
@@ -67,7 +92,7 @@ public class FaceManager : MonoBehaviour {
 	{
 		for(int i = 0; i < happy.Length; i++)
 		{
-			randomPersonsFace[i].transform.position = Vector3.Lerp(happy[i].transform.position,upset[i].transform.position,score / finalScore);
+			randomPersonsFace[i].transform.localPosition = Vector3.Lerp(happy[i].transform.localPosition,upset[i].transform.localPosition,score / finalScore);
 		}
 	}
 
@@ -80,7 +105,14 @@ public class FaceManager : MonoBehaviour {
 		score = 0;
 		for (int i = 0; i < CurrentParadigm.Count; i++)
 		{
-			score += Vector3.Distance (playerTransforms[i].transform.position, CurrentParadigm[i]);
+			score += Vector3.Distance (playerTransforms[i].transform.localPosition, CurrentParadigm[i]);
+		}
+
+		if(testNextLevel)
+		{
+			LoadLevel(testLevel);
+			testLevel++;
+			testNextLevel = false;
 		}
 		
 		OthersFace();
