@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 
 public class ShowPanels : MonoBehaviour {
-
+	public static ShowPanels instance;
 	public GameObject optionsPanel;							//Store a reference to the Game Object OptionsPanel 
 	public GameObject optionsTint;							//Store a reference to the Game Object OptionsTint 
 	public GameObject menuPanel;							//Store a reference to the Game Object MenuPanel 
@@ -12,8 +12,6 @@ public class ShowPanels : MonoBehaviour {
     private GameObject activePanel;                         
     private MenuObject activePanelMenuObject;
     private EventSystem eventSystem;
-
-
 
     private void SetSelection(GameObject panelToSetSelected)
     {
@@ -28,6 +26,8 @@ public class ShowPanels : MonoBehaviour {
 
     public void Start()
     {
+		if (instance == null)
+			instance = this;
         SetSelection(menuPanel);
     }
 
