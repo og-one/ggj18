@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class playerpositions : MonoBehaviour {
-	public static List<Vector3> positions;
-	public static List<List<Vector3>> list_of_positions;
+    public static List<Vector3> positions = new List<Vector3>();
+    public static List<List<Vector3>> list_of_positions = new List<List<Vector3>>();
 	public GameObject Eye_Right; 
 	public GameObject Eye_Left; 
 	public GameObject EyeBrow_Right_1; 
