@@ -13,6 +13,7 @@ public class FaceManager : MonoBehaviour {
 
 	public NewBehaviourScript paradigm; 
 	public float score;
+	public float finalScore;
 
 //	public List<Vector3> Eye_Right; 
 //	public List<Vector3> Eye_Left; 
@@ -41,10 +42,13 @@ public class FaceManager : MonoBehaviour {
 			CurrentParadigm.Add (t.position);
 		}
 
-
-			
-
-
+		//scoring
+		Transform[] playerTransforms = playerPos.GetComponentsInChildren<Transform> ();
+		finalScore = 0;
+		for (int i = 0; i < CurrentParadigm.Count; i++)
+		{
+			finalScore += Vector3.Distance (playerTransforms [i].position, CurrentParadigm[i]);
+		}
 	}
 
 	// This function is to compare the coordinates of the players with the paradigm 
@@ -63,7 +67,7 @@ public class FaceManager : MonoBehaviour {
 	{
 		for(int i = 0; i < happy.Length; i++)
 		{
-			randomPersonsFace[i].transform.position = Vector3.Lerp(happy[i].transform.position,upset[i].transform.position,score / 20f);
+			randomPersonsFace[i].transform.position = Vector3.Lerp(happy[i].transform.position,upset[i].transform.position,score / finalScore);
 		}
 	}
 
@@ -81,14 +85,6 @@ public class FaceManager : MonoBehaviour {
 		
 		
 		OthersFace();
-
-		
-		if(Input.GetMouseButton(0))
-		{
-			//Debug.Log ("Testing Update");	
-//			Physics.Raycast;
-		}
-
 //		if(Input.a)
 	}
 }

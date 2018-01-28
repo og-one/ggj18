@@ -7,59 +7,58 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour 
 {
 	public static GameManager instance;
-	private ShowPanels showPanels;
 	public Text uiTimer;
 	public Button uiButton;
 
 	float timer;
-	int level = 0;
+	int level;
 
-	public void Start()
-	{
+	public void Start() {
+		Debug.Log("Start");
 		if (instance == null)
 			instance = this;
 
-		level += 1;
-		timer = 1f;
+		level = 0;
 		uiButton.gameObject.SetActive(false);
 	}
 
-	public void StartGame()
-	{
-		Debug.Log("Start game");
-		timer = 10.0f;	
+	public void StartGame() {
+		Debug.Log("StartGame");
+		level = 1;
+		timer = 60f;
 	}
 
-	public void NextScene()
-	{
-		Debug.Log ("Next Scene");
-	}
-
-	public void Update()
-	{
-		// link time to the UI Text Element
-		timer -= Time.deltaTime;
-		timer = Mathf.Clamp(timer, 0.0f, 5.0f);
-		uiTimer.text = timer.ToString();
-
-		if (timer <= 0)
-		{
-			//hide level
-			if (level < 3)
-			{
-				uiButton.gameObject.SetActive(true);
-			} else 
-			{
-				EndScene();
-			}
+	public void NextScene() {
+		Debug.Log("NextScene");
+		if (level < 3) {
+			level += 1;
+			timer = 60f;
+			uiButton.gameObject.SetActive (false);
+		} else {
+			EndScene();
 		}
 	}
 
-	public void EndScene()
-	{
+	public void Update() {
+		if (level > 0 && level < 4) {
+			if (timer == 021) {
+				uiButton.gameObject.SetActive (true);
+			} else {
+				timer = Mathf.Clamp (timer - Time.deltaTime, 0.0f, 2.0f);
+				uiTimer.text = "Level " + level.ToString() + ": " + timer.ToString("F2") + " sec";
+			}
+		} else {
+			EndScene();
+		}
+
+	}
+
+	public void EndScene() {
 		// display end screen
 		// fill up progress bars based on score
 		// main menu button, quit button
+		Debug.Log("End scene");
+		//ShowPanels.instance.ShowMenu();
 	}
 
 
