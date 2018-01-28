@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FaceManager : MonoBehaviour {
 
+    public static List<Vector3> npc_positions = new List<Vector3>();
+    public static List<List<Vector3>> npc_list_of_positions = new List<List<Vector3>>();//0,1,2
 
 	public GameObject playerPos;
 
@@ -41,13 +43,25 @@ public class FaceManager : MonoBehaviour {
 
 	public void LoadLevel(int level)
 	{
+        foreach(GameObject x in randomPersonsFace){
+            npc_positions.Add(x.transform.position);
+        }
+        npc_list_of_positions.Add(npc_positions);
 		// load the graphics
 		//if(level == 1)
+		facecontroller[] playerTransforms = playerPos.GetComponentsInChildren<facecontroller> ();
+		for (int i = 0; i < playerTransforms.Length; i++)
+		{
+			playerTransforms [i].transform.position = playerTransforms [i].origin;
+		}
 
 		// Change the face paradigm that you compare to
 		CurrentParadigm.Clear ();
 		foreach (Collider c in FaceParadigm [level].GetComponentsInChildren<Collider> ()) {
 			CurrentParadigm.Add (c.transform.localPosition);
+		}
+		if (level > 0) {
+			FaceParadigm [level - 1].SetActive(false);
 		}
 
 	}
@@ -74,15 +88,9 @@ public class FaceManager : MonoBehaviour {
 		{
 			finalScore += Vector3.Distance (playerTransforms[i].transform.localPosition, CurrentParadigm[i]);
 		}
+		testLevel = 0;
 	}
-
-	// This function is to compare the coordinates of the players with the paradigm 
-	void Compare(){
-//		PlayerCoordinates = GameObject.FindGameObjectsWithTag ("Player");
-//		foreach (GameObject p in PlayerCoordinates)
-//			p.transform.position()
-	}
-
+		
 
 	public GameObject[] happy;
 	public GameObject[] upset;
@@ -110,12 +118,16 @@ public class FaceManager : MonoBehaviour {
 
 		if(testNextLevel)
 		{
-			LoadLevel(testLevel);
-			testLevel++;
+			loadNextLevel ();
 			testNextLevel = false;
 		}
 		
 		OthersFace();
 //		if(Input.a)
+	}
+
+	public void loadNextLevel() {
+		testLevel++;
+		LoadLevel (testLevel);
 	}
 }

@@ -6,6 +6,7 @@ public class facecontroller : MonoBehaviour {
 
 	private Renderer rend; 
 	private SpriteRenderer sr;
+	public float myScale;
 
 	private Vector3 origin;
 	private Vector3 screenPoint;
@@ -23,6 +24,8 @@ public class facecontroller : MonoBehaviour {
 			sr = childcircle.GetComponent<SpriteRenderer> ();
 		}	
 		rend = GetComponent<Renderer> (); 
+		Vector3 Scale = new Vector3 (myScale, myScale, myScale);
+		sr.transform.localScale = Scale;
 
 		Color curColor = rend.material.color;
 		curColor.a = 0f;
@@ -54,6 +57,7 @@ public class facecontroller : MonoBehaviour {
 		}
 	}
 	void Update(){
+
 
 		if (disappear) {
 		
