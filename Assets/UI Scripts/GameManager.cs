@@ -11,28 +11,25 @@ public class GameManager : MonoBehaviour
 	public Button uiButton;
 
 	float timer;
-	int level = 3;
+	int level;
 
-	public void Start()
-	{
+	public void Start() {
+		Debug.Log("Start");
 		if (instance == null)
 			instance = this;
 
-		level += 1;
-		Debug.Log("Start");
+		level = 0;
 		uiButton.gameObject.SetActive(false);
 	}
 
-	public void StartGame()
-	{
+	public void StartGame() {
+		Debug.Log("StartGame");
 		level = 1;
 		timer = 60f;
-		uiButton.gameObject.SetActive(false);
-		Debug.Log("Start game");
 	}
 
-	public void NextScene()
-	{
+	public void NextScene() {
+		Debug.Log("NextScene");
 		if (level < 3) {
 			level += 1;
 			timer = 60f;
@@ -42,30 +39,26 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void Update()
-	{
-		if (timer == 0) {
-			Debug.Log (timer);
-			//hide level
-			if (level < 4) {
-				uiButton.gameObject.SetActive(true);
+	public void Update() {
+		if (level > 0 && level < 4) {
+			if (timer == 021) {
+				uiButton.gameObject.SetActive (true);
+			} else {
+				timer = Mathf.Clamp (timer - Time.deltaTime, 0.0f, 2.0f);
+				uiTimer.text = "Level " + level.ToString() + ": " + timer.ToString("F2") + " sec";
 			}
 		} else {
-			timer -= Time.deltaTime;
-			timer = Mathf.Clamp (timer, 0.0f, 5.0f);
-			uiTimer.text = "Level " + level.ToString () + ": " + timer.ToString("F2") + " sec";
+			EndScene();
 		}
 
 	}
 
-	public void EndScene()
-	{
+	public void EndScene() {
 		// display end screen
 		// fill up progress bars based on score
 		// main menu button, quit button
 		Debug.Log("End scene");
-		level = 0;
-		timer = 0f;
+		//ShowPanels.instance.ShowMenu();
 	}
 
 
